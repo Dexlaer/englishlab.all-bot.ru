@@ -256,6 +256,10 @@ h1 {
   border-color: rgba(234, 107, 45, 0.2);
 }
 
+.hub-card-primary {
+  grid-column: span 2;
+}
+
 .hub-kicker {
   display: flex;
   align-items: center;
@@ -286,6 +290,54 @@ h1 {
   background: rgba(29, 143, 122, 0.1);
   color: var(--accent-2);
   font-weight: 800;
+}
+
+.back-link {
+  display: inline-flex;
+  margin-bottom: 14px;
+  color: var(--accent-2);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.route-list {
+  display: grid;
+  gap: 12px;
+}
+
+.route-item {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: center;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.route-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 18px;
+  background: rgba(29, 143, 122, 0.12);
+  color: var(--accent-2);
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.route-item h3 {
+  margin: 0 0 4px;
+  font-size: 22px;
+}
+
+.route-item p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.45;
 }
 
 .reference-image-link {
@@ -567,9 +619,18 @@ h1 {
 @media (max-width: 900px) {
   .hero,
   .levels-grid,
+  .hub-grid,
   .example-grid,
   .choices,
   .prompt-card {
+    grid-template-columns: 1fr;
+  }
+
+  .hub-card-primary {
+    grid-column: auto;
+  }
+
+  .route-item {
     grid-template-columns: 1fr;
   }
 

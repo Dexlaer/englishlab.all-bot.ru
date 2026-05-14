@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Местоимения — English Lab</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero module-hero">
+        <div class="hero-copy">
+          <a class="back-link" href="./index.html">← English Lab</a>
+          <p class="eyebrow">Тренажер</p>
+          <h1>Местоимения</h1>
+          <p class="hero-text">
+            Уровни для <strong>he, she, they, him, her, them, his, her, their</strong>.
+            Сначала смотри на роль слова, затем тренируй серию из 10 правильных ответов подряд.
+          </p>
+          <div class="hero-actions">
+            <a href="#levels" class="button button-primary">К уровням</a>
+            <a href="#trainer" class="button button-secondary">К тренировке</a>
+            <button class="button button-danger" id="resetAllButton" type="button">Сбросить прогресс</button>
+          </div>
+        </div>
+        <div class="hero-scene">
+          <div class="scene-card scene-left">
+            <span class="scene-label">he / she / they</span>
+            <span class="emoji">🧍</span>
+            <small>кто делает?</small>
+          </div>
+          <div class="scene-card scene-right">
+            <span class="scene-label">him / her / them</span>
+            <span class="emoji">🎯</span>
+            <small>на кого действие?</small>
+          </div>
+          <div class="scene-card scene-bottom">
+            <span class="scene-label">his / her / their</span>
+            <span class="emoji">🏅</span>
+            <small>чье это?</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="map" id="levels">
+        <div class="section-head">
+          <p class="eyebrow">Обучение</p>
+          <h2>Уровни и медали</h2>
+          <p class="section-copy">
+            Пройденный уровень получает медаль на карточке. Можно нажимать на открытые
+            уровни и тренировать их отдельно.
+          </p>
+        </div>
+        <div class="groups levels-grid" id="levelsGrid"></div>
+      </section>
+
+      <section class="examples">
+        <div class="section-head">
+          <p class="eyebrow">Подсказка</p>
+          <h2>Как быстро различать формы</h2>
+        </div>
+        <div class="example-grid">
+          <article class="example-card">
+            <p class="example-type">Субъект</p>
+            <h3>he / she / they</h3>
+            <p class="example-line">She is singing.</p>
+            <p class="example-note">Кто сам делает действие.</p>
+          </article>
+          <article class="example-card">
+            <p class="example-type">Объект</p>
+            <h3>him / her / them</h3>
+            <p class="example-line">I can see them.</p>
+            <p class="example-note">На кого направлено действие.</p>
+          </article>
+          <article class="example-card">
+            <p class="example-type">Притяжательное</p>
+            <h3>his / her / their</h3>
+            <p class="example-line">Their room is warm.</p>
+            <p class="example-note">Кому принадлежит предмет.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="quiz" id="trainer">
+        <div class="section-head">
+          <p class="eyebrow">Тренировка</p>
+          <h2 id="trainerTitle">Уровень 1</h2>
+          <p class="section-copy" id="trainerDescription">
+            Сначала собери 10 правильных подряд, и тогда откроется следующий уровень.
+          </p>
+        </div>
+        <div class="quiz-shell">
+          <div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
+          <div class="quiz-topline">
+            <div class="pill">Текущий уровень <span id="levelName">1</span></div>
+            <div class="pill">Подряд <span id="streak">0</span>/10</div>
+            <div class="pill">Всего медалей <span id="medalsCount">0</span></div>
+          </div>
+          <div class="prompt-card">
+            <div class="prompt-visual" id="promptVisual">🧒</div>
+            <div>
+              <p class="prompt-text" id="promptText">The boy is here. ___ is smiling.</p>
+              <p class="prompt-hint" id="promptHint">Подумай: кто здесь главный герой действия?</p>
+            </div>
+          </div>
+          <div class="choices" id="choices"></div>
+          <div class="feedback" id="feedback">Нажми на вариант ниже.</div>
+          <div class="quiz-actions">
+            <button class="button button-primary" id="nextButton" type="button">
+              <span class="button-fill" id="nextButtonFill" aria-hidden="true"></span>
+              <span class="button-label" id="nextButtonLabel">Следующий вопрос</span>
+            </button>
+            <button class="button button-secondary" id="repeatLevelButton" type="button">Повторить уровень</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

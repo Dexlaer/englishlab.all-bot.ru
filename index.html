@@ -8,178 +8,134 @@
   </head>
   <body>
     <main class="page">
-      <section class="hero">
+      <section class="hero home-hero">
         <div class="hero-copy">
           <p class="eyebrow">englishlab.all-bot.ru</p>
           <h1>English Lab</h1>
           <p class="hero-text">
-            Короткий сайт со сборником тренажеров по английскому языку. Внутри
-            будут отдельные мини-модули. Сейчас уже готовы
-            <strong>тренажер местоимений</strong> и
-            <strong>модуль Do / Play / Go</strong>, а еще устный
-            <strong>Phrase Switch</strong> и шпаргалка по построению фраз.
+            Личная панель для короткой практики английского: говорение вслух,
+            грамматические переключатели, местоимения и шпаргалка по построению фраз.
           </p>
           <div class="hero-actions">
-            <a href="#tools" class="button button-primary">Смотреть фишечки</a>
-            <a href="#pronouns" class="button button-secondary">Открыть местоимения</a>
-            <button class="button button-danger" id="resetAllButton" type="button">Сбросить все</button>
+            <a href="./phrase-switch.html" class="button button-primary">Начать с говорения</a>
+            <a href="#route" class="button button-secondary">Как заниматься</a>
           </div>
         </div>
         <div class="hero-scene">
           <div class="scene-card scene-left">
-            <span class="scene-label">Grammar</span>
-            <span class="emoji">🧠</span>
-            <small>простые правила</small>
+            <span class="scene-label">1</span>
+            <span class="emoji">🗣️</span>
+            <small>сказать вслух</small>
           </div>
           <div class="scene-card scene-right">
-            <span class="scene-label">Words</span>
-            <span class="emoji">🗂️</span>
-            <small>слова и фразы</small>
+            <span class="scene-label">2</span>
+            <span class="emoji">🧭</span>
+            <small>свериться</small>
           </div>
           <div class="scene-card scene-bottom">
-            <span class="scene-label">Pronouns</span>
-            <span class="emoji">🎯</span>
-            <small>местоимения</small>
+            <span class="scene-label">3</span>
+            <span class="emoji">🔁</span>
+            <small>повторить ошибки</small>
           </div>
         </div>
       </section>
 
-      <section class="hub" id="tools">
+      <section class="hub" id="route">
         <div class="section-head">
-          <p class="eyebrow">Тренажеры</p>
-          <h2>Тренажеры внутри сайта</h2>
+          <p class="eyebrow">Маршрут</p>
+          <h2>Что делать на занятии 10-20 минут</h2>
           <p class="section-copy">
-            Здесь будут собираться небольшие модули по английскому. Сейчас активен
-            тренажер по местоимениям, остальные можно добавлять сюда же дальше.
+            Самый полезный порядок: сначала устная скорость, потом справка, затем точечные тренажеры.
+          </p>
+        </div>
+        <div class="route-list">
+          <article class="route-item">
+            <span class="route-number">1</span>
+            <div>
+              <h3>Phrase Switch</h3>
+              <p>Основной тренажер: увидел русскую мысль, сказал английскую фразу вслух, сверился.</p>
+            </div>
+            <a href="./phrase-switch.html" class="button button-primary">Старт</a>
+          </article>
+          <article class="route-item">
+            <span class="route-number">2</span>
+            <div>
+              <h3>Шпаргалка “Как строить”</h3>
+              <p>Открывай, когда нужно быстро вспомнить порядок слов в утверждении, вопросе и отрицании.</p>
+            </div>
+            <a href="#build-chart" class="button button-secondary">Смотреть</a>
+          </article>
+          <article class="route-item">
+            <span class="route-number">3</span>
+            <div>
+              <h3>Точечные модули</h3>
+              <p>Добивай конкретные темы: местоимения и do/play/go, когда они всплывают на уроках.</p>
+            </div>
+            <a href="#modules" class="button button-secondary">Выбрать</a>
+          </article>
+        </div>
+      </section>
+
+      <section class="hub" id="modules">
+        <div class="section-head">
+          <p class="eyebrow">Модули</p>
+          <h2>Все тренажеры</h2>
+          <p class="section-copy">
+            Каждый модуль открывается отдельно, чтобы на странице была одна понятная задача.
           </p>
         </div>
         <div class="hub-grid">
+          <article class="hub-card hub-card-live hub-card-primary">
+            <div class="hub-kicker">
+              <span class="scene-label">Главный</span>
+              <span class="hub-icon">🗣️</span>
+            </div>
+            <h3>Phrase Switch</h3>
+            <p>Устный тренажер автоматизма: be, do/does, questions, now/usual, past и mixed speed.</p>
+            <a href="./phrase-switch.html" class="button button-primary">Открыть</a>
+          </article>
           <article class="hub-card hub-card-live">
             <div class="hub-kicker">
-              <span class="scene-label">Готово</span>
+              <span class="scene-label">Грамматика</span>
               <span class="hub-icon">🎯</span>
             </div>
             <h3>Местоимения</h3>
             <p>he, she, they, him, her, them, his, her, their с уровнями и медалями.</p>
-            <a href="#pronouns" class="button button-primary">Открыть модуль</a>
+            <a href="./pronouns.html" class="button button-primary">Открыть</a>
           </article>
           <article class="hub-card hub-card-live">
             <div class="hub-kicker">
-              <span class="scene-label">Готово</span>
+              <span class="scene-label">Активности</span>
               <span class="hub-icon">⚽</span>
             </div>
             <h3>Do / Play / Go</h3>
             <p>Как говорить про игры, спорт, shopping, homework, yoga и другие активности.</p>
-            <a href="./do-play-go.html" class="button button-primary">Открыть страницу</a>
+            <a href="./do-play-go.html" class="button button-primary">Открыть</a>
           </article>
           <article class="hub-card hub-card-live">
             <div class="hub-kicker">
-              <span class="scene-label">Готово</span>
-              <span class="hub-icon">🗣️</span>
-            </div>
-            <h3>Phrase Switch</h3>
-            <p>Устный тренажер: увидел русскую мысль, сказал вслух, сверился и повторил ошибки.</p>
-            <a href="./phrase-switch.html" class="button button-primary">Открыть страницу</a>
-          </article>
-          <article class="hub-card hub-card-live">
-            <div class="hub-kicker">
-              <span class="scene-label">Шпаргалка</span>
+              <span class="scene-label">Справка</span>
               <span class="hub-icon">🧭</span>
             </div>
             <h3>Как строить</h3>
-            <p>Табличка для быстрого вспоминания схем: утверждение, отрицание, вопрос.</p>
-            <a href="#build-chart" class="button button-primary">Открыть таблицу</a>
+            <p>Таблица для быстрого вспоминания схем: утверждение, отрицание, вопрос.</p>
+            <a href="#build-chart" class="button button-primary">Открыть</a>
           </article>
         </div>
       </section>
 
       <section class="reference" id="build-chart">
         <div class="section-head">
-          <p class="eyebrow">Шпаргалка</p>
+          <p class="eyebrow">Справка</p>
           <h2>Как строить английские фразы</h2>
           <p class="section-copy">
-            Быстрая таблица рядом с тренажерами: можно открыть в полный размер и держать под рукой во время практики.
+            Таблица для сверки во время практики. Нажми на изображение, чтобы открыть его крупно.
           </p>
         </div>
         <a class="reference-image-link" href="./Как строить.png" target="_blank" rel="noreferrer">
           <img class="reference-image" src="./Как строить.png" alt="Таблица Как строить английские фразы" />
         </a>
       </section>
-
-      <section class="map" id="pronouns">
-        <div class="section-head">
-          <p class="eyebrow">Вложенный модуль</p>
-          <h2>Тренажер: Местоимения</h2>
-          <p class="section-copy">
-            Это первый мини-сайт внутри общей страницы. Ниже уже сам тренажер:
-            уровни, случайные вопросы, серия из 10 подряд и медали за прохождение.
-          </p>
-        </div>
-        <div class="groups levels-grid" id="levelsGrid"></div>
-      </section>
-
-      <section class="examples">
-        <div class="section-head">
-          <p class="eyebrow">Подсказка</p>
-          <h2>Как быстро различать формы</h2>
-        </div>
-        <div class="example-grid">
-          <article class="example-card">
-            <p class="example-type">Субъект</p>
-            <h3>he / she / they</h3>
-            <p class="example-line">She is singing.</p>
-            <p class="example-note">Кто сам делает действие.</p>
-          </article>
-          <article class="example-card">
-            <p class="example-type">Объект</p>
-            <h3>him / her / them</h3>
-            <p class="example-line">I can see them.</p>
-            <p class="example-note">На кого направлено действие.</p>
-          </article>
-          <article class="example-card">
-            <p class="example-type">Притяжательное</p>
-            <h3>his / her / their</h3>
-            <p class="example-line">Their room is warm.</p>
-            <p class="example-note">Кому принадлежит предмет.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="quiz" id="trainer">
-        <div class="section-head">
-          <p class="eyebrow">Тренировка</p>
-          <h2 id="trainerTitle">Уровень 1</h2>
-          <p class="section-copy" id="trainerDescription">
-            Сначала собери 10 правильных подряд, и тогда откроется следующий уровень.
-          </p>
-        </div>
-        <div class="quiz-shell">
-          <div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
-          <div class="quiz-topline">
-            <div class="pill">Текущий уровень <span id="levelName">1</span></div>
-            <div class="pill">Подряд <span id="streak">0</span>/10</div>
-            <div class="pill">Всего медалей <span id="medalsCount">0</span></div>
-          </div>
-          <div class="prompt-card">
-            <div class="prompt-visual" id="promptVisual">🧒</div>
-            <div>
-              <p class="prompt-text" id="promptText">The boy is here. ___ is smiling.</p>
-              <p class="prompt-hint" id="promptHint">Подумай: кто здесь главный герой действия?</p>
-            </div>
-          </div>
-          <div class="choices" id="choices"></div>
-          <div class="feedback" id="feedback">Нажми на вариант ниже.</div>
-          <div class="quiz-actions">
-            <button class="button button-primary" id="nextButton" type="button">
-              <span class="button-fill" id="nextButtonFill" aria-hidden="true"></span>
-              <span class="button-label" id="nextButtonLabel">Следующий вопрос</span>
-            </button>
-            <button class="button button-secondary" id="repeatLevelButton" type="button">Повторить уровень</button>
-          </div>
-        </div>
-      </section>
     </main>
-
-    <script src="./app.js"></script>
   </body>
 </html>
