@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phrase Switch — English Lab</title>
+    <link rel="stylesheet" href="./phrase-switch.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="topbar">
+        <a class="back-link" href="./index.html">← English Lab</a>
+        <div class="top-actions">
+          <button class="ghost-button" id="reviewErrorsButton" type="button">Повторить ошибки</button>
+          <button class="ghost-button danger" id="resetButton" type="button">Сбросить прогресс</button>
+        </div>
+      </section>
+
+      <section class="hero">
+        <div>
+          <p class="eyebrow">Speaking automation</p>
+          <h1>Phrase Switch</h1>
+          <p class="hero-text">
+            Устный тренажер для быстрого выбора английской схемы: to be, do/does,
+            questions, now/usual, past и mixed mode.
+          </p>
+        </div>
+        <div class="hero-stats">
+          <div>
+            <span id="totalDone">0</span>
+            <small>ответов</small>
+          </div>
+          <div>
+            <span id="accuracy">0%</span>
+            <small>легко</small>
+          </div>
+          <div>
+            <span id="errorCount">0</span>
+            <small>ошибок</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="level-band">
+        <div class="section-head">
+          <p class="eyebrow">Уровни</p>
+          <h2>Выбери, что тренировать</h2>
+        </div>
+        <div class="levels" id="levels"></div>
+      </section>
+
+      <section class="trainer" id="trainer">
+        <div class="trainer-head">
+          <div>
+            <p class="eyebrow" id="modeLabel">Speak mode</p>
+            <h2 id="levelTitle">Be or Do</h2>
+            <p id="levelDescription">Отличаем to be от обычного действия.</p>
+          </div>
+          <div class="speed-control" aria-label="Скорость">
+            <button class="speed-button" data-seconds="8" type="button">8 сек</button>
+            <button class="speed-button active" data-seconds="5" type="button">5 сек</button>
+            <button class="speed-button" data-seconds="3" type="button">3 сек</button>
+          </div>
+        </div>
+
+        <div class="exercise-shell">
+          <div class="exercise-topline">
+            <span class="pill">Карточка <span id="cardIndex">1</span></span>
+            <span class="pill">Серия <span id="streak">0</span>/10</span>
+            <span class="pill" id="patternPill">to be</span>
+          </div>
+
+          <div class="timer-wrap">
+            <div class="timer-ring" id="timerRing">
+              <span id="timerValue">5</span>
+            </div>
+            <div class="timer-copy">
+              <p class="task-label">Скажи вслух по-английски</p>
+              <h3 id="ruPrompt">Она дома.</h3>
+            </div>
+          </div>
+
+          <div class="answer-panel" id="answerPanel" hidden>
+            <p class="answer-label">Правильный вариант</p>
+            <p class="answer-text" id="answerText">She is at home.</p>
+            <p class="structure" id="structureText">S + am/is/are + place</p>
+            <p class="explanation" id="explanationText">Если нет действия, часто нужен to be.</p>
+          </div>
+
+          <div class="trainer-actions" id="beforeAnswerActions">
+            <button class="primary-button" id="showAnswerButton" type="button">Показать ответ</button>
+            <button class="secondary-button" id="skipButton" type="button">Пропустить</button>
+          </div>
+
+          <div class="rating-actions" id="ratingActions" hidden>
+            <button class="rating easy" data-rating="easy" type="button">Легко</button>
+            <button class="rating mistake" data-rating="mistake" type="button">С ошибкой</button>
+            <button class="rating slow" data-rating="slow" type="button">Не успел</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="guide">
+        <div class="section-head">
+          <p class="eyebrow">Что тренируем</p>
+          <h2>Главный переключатель</h2>
+        </div>
+        <div class="guide-grid">
+          <article>
+            <strong>to be</strong>
+            <span>She is tired. Where is she?</span>
+          </article>
+          <article>
+            <strong>do / does</strong>
+            <span>Does she work here? I don't know.</span>
+          </article>
+          <article>
+            <strong>be + V-ing</strong>
+            <span>Is she working now?</span>
+          </article>
+          <article>
+            <strong>did / was</strong>
+            <span>Did you go? Were you tired?</span>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="./phrase-switch.js"></script>
+  </body>
+</html>
