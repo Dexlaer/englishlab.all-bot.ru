@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Похожие формы — English Lab</title>
+    <link rel="stylesheet" href="./confusing-forms.css" />
+  </head>
+  <body>
+    <main class="page">
+      <section class="topbar">
+        <a class="back-link" href="./index.html">← English Lab</a>
+        <div class="top-actions">
+          <button class="ghost-button" id="reviewErrorsButton" type="button">Повторить ошибки</button>
+          <button class="ghost-button danger" id="resetButton" type="button">Сбросить</button>
+        </div>
+      </section>
+
+      <section class="hero">
+        <div>
+          <p class="eyebrow">confusion trainer</p>
+          <h1>Похожие формы</h1>
+          <p class="hero-text">
+            Тренажер для слов, которые выглядят и звучат рядом:
+            <strong>they / their / there / they’re</strong>,
+            <strong>your / you’re</strong>, <strong>its / it’s</strong>,
+            <strong>whose / who’s</strong> и формы типа <strong>their / theirs</strong>.
+          </p>
+        </div>
+        <div class="hero-note">
+          <strong>Главная идея</strong>
+          <span>Сначала понять роль слова: кто, чей, где, сокращение или “чей без предмета”.</span>
+        </div>
+      </section>
+
+      <section class="explain">
+        <div class="section-head">
+          <p class="eyebrow">сначала понять</p>
+          <h2>Что тут обычно путают</h2>
+          <p class="section-copy">
+            Эти слова похожи внешне или на слух, но у них разные роли в предложении.
+            Перед тренировкой держи в голове короткие якоря ниже.
+          </p>
+        </div>
+        <div class="explain-grid">
+          <article>
+            <strong>they</strong>
+            <span>они, кто делает действие: They are here.</span>
+          </article>
+          <article>
+            <strong>their + предмет</strong>
+            <span>их дом, их друзья: their house, their friends.</span>
+          </article>
+          <article>
+            <strong>there</strong>
+            <span>там, туда или “есть”: over there, there are.</span>
+          </article>
+          <article>
+            <strong>they’re</strong>
+            <span>сокращение от they are: They’re ready.</span>
+          </article>
+          <article>
+            <strong>theirs / yours / mine</strong>
+            <span>чей, но без предмета после слова: This bag is mine.</span>
+          </article>
+          <article>
+            <strong>this / these / that / those</strong>
+            <span>это рядом, эти рядом, то далеко, те далеко.</span>
+          </article>
+        </div>
+      </section>
+
+      <section class="levels-block">
+        <div class="section-head">
+          <p class="eyebrow">уровни</p>
+          <h2>Что тренируем</h2>
+        </div>
+        <div class="levels" id="levels"></div>
+      </section>
+
+      <section class="trainer" id="trainer">
+        <div class="trainer-head">
+          <div>
+            <p class="eyebrow" id="modeLabel">practice</p>
+            <h2 id="levelTitle">They / Their / There / They’re</h2>
+            <p id="levelDescription">Самая частая путаница: они, их, там и they are.</p>
+          </div>
+          <div class="stats">
+            <span>Серия <strong id="streak">0</strong>/10</span>
+            <span>Ошибки <strong id="errorCount">0</strong></span>
+          </div>
+        </div>
+
+        <div class="exercise">
+          <div class="chips">
+            <span id="roleChip">роль</span>
+            <span id="hintChip">подсказка</span>
+          </div>
+          <p class="task-label">Вставь правильную форму</p>
+          <h3 id="promptText">___ are happy.</h3>
+          <p class="translation" id="translationText">Они счастливы.</p>
+
+          <div class="choices" id="choices"></div>
+
+          <div class="feedback" id="feedback" hidden>
+            <p class="feedback-status" id="feedbackStatus">Верно</p>
+            <p class="correct-line" id="correctLine">They are happy.</p>
+            <p class="explanation" id="explanationText">They = они, кто делает действие.</p>
+          </div>
+
+          <div class="actions">
+            <button class="primary-button" id="nextButton" type="button">Следующая карточка</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="cheatsheet">
+        <div class="section-head">
+          <p class="eyebrow">мини-шпаргалка</p>
+          <h2>Быстрые якоря</h2>
+        </div>
+        <div class="cheatsheet-grid">
+          <article>
+            <strong>they</strong>
+            <span>они, кто делает действие</span>
+          </article>
+          <article>
+            <strong>their + noun</strong>
+            <span>их дом, их машина, их друзья</span>
+          </article>
+          <article>
+            <strong>there</strong>
+            <span>там, туда, существует</span>
+          </article>
+          <article>
+            <strong>they’re</strong>
+            <span>they are, можно раскрыть в “они есть/они сейчас”</span>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <script src="./confusing-forms.js"></script>
+  </body>
+</html>

@@ -1,0 +1,438 @@
+:root {
+  --page: #f7f9fb;
+  --ink: #17212b;
+  --muted: #617184;
+  --line: #dce5ee;
+  --card: #ffffff;
+  --blue: #2f6df6;
+  --blue-soft: #eaf1ff;
+  --green: #188a5a;
+  --green-soft: #e8f7ef;
+  --red: #c9483b;
+  --red-soft: #fae9e7;
+  --amber: #d88316;
+  --amber-soft: #fff3df;
+  --shadow: 0 18px 48px rgba(25, 43, 64, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--ink);
+  background: var(--page);
+  font-family: "Avenir Next", "Trebuchet MS", sans-serif;
+}
+
+button {
+  font: inherit;
+}
+
+.page {
+  width: min(1080px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 24px 0 56px;
+}
+
+.topbar,
+.hero,
+.explain,
+.levels-block,
+.trainer,
+.cheatsheet {
+  margin-bottom: 20px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.back-link {
+  color: var(--blue);
+  font-weight: 900;
+  text-decoration: none;
+}
+
+.top-actions,
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 18px;
+  align-items: stretch;
+  padding: 28px 0 10px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin-bottom: 14px;
+  font-size: 70px;
+  line-height: 0.98;
+}
+
+h2 {
+  margin-bottom: 8px;
+  font-size: 34px;
+  line-height: 1.12;
+}
+
+.hero-text,
+#levelDescription {
+  max-width: 720px;
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+.hero-note,
+.explain,
+.levels-block,
+.trainer,
+.cheatsheet {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.hero-note {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px;
+}
+
+.hero-note strong {
+  font-size: 22px;
+}
+
+.hero-note span {
+  color: var(--muted);
+  line-height: 1.45;
+}
+
+.levels-block,
+.explain,
+.trainer,
+.cheatsheet {
+  padding: 20px;
+}
+
+.section-head {
+  margin-bottom: 16px;
+}
+
+.levels {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.explain-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.explain-grid article {
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfdff;
+}
+
+.explain-grid strong,
+.explain-grid span {
+  display: block;
+}
+
+.explain-grid strong {
+  margin-bottom: 6px;
+}
+
+.explain-grid span {
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.level-card {
+  min-height: 142px;
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfdff;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+
+.level-card.active {
+  border-color: rgba(47, 109, 246, 0.48);
+  background: var(--blue-soft);
+}
+
+.level-card.locked {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.level-card strong {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 17px;
+}
+
+.level-card span {
+  display: block;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.level-meta {
+  margin-top: 12px;
+  color: var(--blue);
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.trainer-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.stats {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.stats span,
+.chips span {
+  display: inline-flex;
+  padding: 8px 10px;
+  border-radius: 999px;
+  background: var(--blue-soft);
+  color: var(--blue);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.exercise {
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fbfdff;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.task-label {
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-weight: 900;
+}
+
+#promptText {
+  margin-bottom: 10px;
+  font-size: 42px;
+  line-height: 1.12;
+}
+
+.translation {
+  margin-bottom: 18px;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.choices {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.choice {
+  min-height: 58px;
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  cursor: pointer;
+  font-size: 22px;
+  font-weight: 900;
+}
+
+.choice.correct {
+  color: var(--green);
+  background: var(--green-soft);
+  border-color: rgba(24, 138, 90, 0.3);
+}
+
+.choice.wrong {
+  color: var(--red);
+  background: var(--red-soft);
+  border-color: rgba(201, 72, 59, 0.3);
+}
+
+.feedback {
+  margin-top: 18px;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fff;
+}
+
+.feedback.success {
+  border-color: rgba(24, 138, 90, 0.28);
+  background: var(--green-soft);
+}
+
+.feedback.error {
+  border-color: rgba(201, 72, 59, 0.28);
+  background: var(--red-soft);
+}
+
+.feedback-status {
+  margin-bottom: 8px;
+  font-weight: 900;
+}
+
+.correct-line {
+  margin-bottom: 10px;
+  font-size: 26px;
+  font-weight: 900;
+}
+
+.explanation {
+  margin-bottom: 0;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
+.actions {
+  margin-top: 18px;
+}
+
+.primary-button,
+.ghost-button {
+  min-height: 42px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 900;
+}
+
+.primary-button {
+  color: #fff;
+  background: var(--blue);
+  border-color: var(--blue);
+}
+
+.ghost-button {
+  color: var(--blue);
+  background: #fff;
+}
+
+.ghost-button.danger {
+  color: var(--red);
+}
+
+.cheatsheet-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.cheatsheet-grid article {
+  padding: 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fbfdff;
+}
+
+.cheatsheet-grid strong,
+.cheatsheet-grid span {
+  display: block;
+}
+
+.cheatsheet-grid strong {
+  margin-bottom: 6px;
+}
+
+.cheatsheet-grid span {
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+@media (max-width: 900px) {
+  .hero,
+  .trainer-head,
+  .levels,
+  .explain-grid,
+  .cheatsheet-grid,
+  .choices {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 52px;
+  }
+
+  #promptText {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 560px) {
+  .page {
+    width: min(100% - 20px, 1080px);
+    padding-top: 14px;
+  }
+
+  .topbar,
+  .top-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}
