@@ -153,6 +153,33 @@ h2 {
   margin-bottom: 16px;
 }
 
+.collapsible-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.collapse-toggle {
+  min-height: 38px;
+  padding: 8px 12px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--blue);
+  cursor: pointer;
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+.collapsible-section.is-collapsed .collapsible-content {
+  display: none;
+}
+
+.collapsible-section.is-collapsed .section-head {
+  margin-bottom: 0;
+}
+
 .levels {
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -431,7 +458,8 @@ h2 {
   }
 
   .topbar,
-  .top-actions {
+  .top-actions,
+  .collapsible-head {
     align-items: stretch;
     flex-direction: column;
   }

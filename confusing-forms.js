@@ -1,4 +1,5 @@
 const STORAGE_KEY = "english-lab-confusing-forms-v1";
+const COLLAPSE_STORAGE_KEY = "english-lab-confusing-forms-collapsed-v1";
 const REQUIRED_STREAK = 10;
 
 const levels = [
@@ -133,6 +134,7 @@ let activeCard = null;
 let queue = [];
 let reviewMode = false;
 let answered = false;
+let collapsedSections = loadCollapsedSections();
 
 const allCards = levels.flatMap((level) =>
   level.cards.map((card, index) => makeCard(card, level.id, index))
@@ -167,6 +169,49 @@ function loadProgress() {
 
 function saveProgress() {
   localStorage.setItem(STORAGE_KEY, JSON.stringify(progress));
+}
+
+function loadCollapsedSections() {
+  const saved = localStorage.getItem(COLLAPSE_STORAGE_KEY);
+  if (!saved) {
+    return {};
+  }
+
+  try {
+    return JSON.parse(saved);
+  } catch (error) {
+    return {};
+  }
+}
+
+function saveCollapsedSections() {
+  localStorage.setItem(COLLAPSE_STORAGE_KEY, JSON.stringify(collapsedSections));
+}
+
+function setupCollapsibleSections() {
+  document.querySelectorAll("[data-collapse-id]").forEach((section) => {
+    const sectionId = section.dataset.collapseId;
+    const button = section.querySelector(".collapse-toggle");
+
+    if (!button) {
+      return;
+    }
+
+    const applyState = () => {
+      const isCollapsed = Boolean(collapsedSections[sectionId]);
+      section.classList.toggle("is-collapsed", isCollapsed);
+      button.textContent = isCollapsed ? "Развернуть" : "Свернуть";
+      button.setAttribute("aria-expanded", String(!isCollapsed));
+    };
+
+    button.addEventListener("click", () => {
+      collapsedSections[sectionId] = !collapsedSections[sectionId];
+      saveCollapsedSections();
+      applyState();
+    });
+
+    applyState();
+  });
 }
 
 function shuffle(items) {
@@ -355,4 +400,5 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
+setupCollapsibleSections();
 startCard();
