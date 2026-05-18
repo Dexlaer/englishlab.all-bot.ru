@@ -44,14 +44,13 @@
       <section class="explain collapsible-section" data-collapse-id="explain">
         <div class="section-head collapsible-head">
           <div>
-            <p class="eyebrow">сначала понять</p>
+            <p class="eyebrow">сначала понять <button class="collapse-toggle" type="button" aria-expanded="true" aria-label="Свернуть блок">⌄</button></p>
             <h2>Что тут обычно путают</h2>
             <p class="section-copy">
               Эти слова похожи внешне или на слух, но у них разные роли в предложении.
               Перед тренировкой держи в голове короткие якоря ниже.
             </p>
           </div>
-          <button class="collapse-toggle" type="button" aria-expanded="true">Свернуть</button>
         </div>
         <div class="explain-grid collapsible-content">
           <article>
@@ -84,10 +83,9 @@
       <section class="levels-block collapsible-section" data-collapse-id="levels">
         <div class="section-head collapsible-head">
           <div>
-            <p class="eyebrow">уровни</p>
+            <p class="eyebrow">уровни <button class="collapse-toggle" type="button" aria-expanded="true" aria-label="Свернуть блок">⌄</button></p>
             <h2>Что тренируем</h2>
           </div>
-          <button class="collapse-toggle" type="button" aria-expanded="true">Свернуть</button>
         </div>
         <div class="levels collapsible-content" id="levels"></div>
       </section>
@@ -100,9 +98,14 @@
             <p id="levelDescription">Самая частая путаница: они, их, там и they are.</p>
           </div>
           <div class="stats">
-            <span>Серия <strong id="streak">0</strong>/10</span>
+            <span id="stageProgress">Слова <strong id="streak">0</strong>/20</span>
             <span>Ошибки <strong id="errorCount">0</strong></span>
           </div>
+        </div>
+
+        <div class="stage-switch" aria-label="Режим тренировки">
+          <button class="stage-button active" data-stage="words" type="button">Слова</button>
+          <button class="stage-button" data-stage="sentences" type="button">Предложения</button>
         </div>
 
         <div class="exercise">
@@ -110,8 +113,9 @@
             <span id="roleChip">роль</span>
             <span id="hintChip">подсказка</span>
           </div>
-          <p class="task-label">Вставь правильную форму</p>
+          <p class="task-label" id="taskLabel">Что значит это слово?</p>
           <h3 id="promptText">___ are happy.</h3>
+          <p class="transcription" id="transcriptionText" hidden>[ðeɪ]</p>
           <p class="translation" id="translationText">Они счастливы.</p>
 
           <div class="choices" id="choices"></div>
@@ -131,10 +135,9 @@
       <section class="cheatsheet collapsible-section" data-collapse-id="cheatsheet">
         <div class="section-head collapsible-head">
           <div>
-            <p class="eyebrow">мини-шпаргалка</p>
+            <p class="eyebrow">мини-шпаргалка <button class="collapse-toggle" type="button" aria-expanded="true" aria-label="Свернуть блок">⌄</button></p>
             <h2>Быстрые якоря</h2>
           </div>
-          <button class="collapse-toggle" type="button" aria-expanded="true">Свернуть</button>
         </div>
         <div class="cheatsheet-grid collapsible-content">
           <article>
