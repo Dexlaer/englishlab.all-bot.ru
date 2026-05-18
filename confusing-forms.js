@@ -447,7 +447,7 @@ function renderWordCard() {
   el.hintChip.textContent = activeCard.direction === "enToRu" ? "слово → смысл" : "смысл → слово";
   el.taskLabel.textContent = activeCard.direction === "enToRu" ? "Что значит это слово?" : "Как это будет по-английски?";
   el.promptText.textContent = activeCard.prompt;
-  el.transcriptionText.hidden = !activeCard.transcription;
+  el.transcriptionText.hidden = activeCard.direction !== "enToRu" || !activeCard.transcription;
   el.transcriptionText.textContent = activeCard.transcription;
   el.translationText.textContent = activeCard.translation;
   renderChoices(activeCard.options, activeCard.choiceMeta);
