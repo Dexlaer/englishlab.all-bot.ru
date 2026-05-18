@@ -158,6 +158,8 @@ h2 {
   align-items: flex-start;
   justify-content: space-between;
   gap: 14px;
+  border-radius: 18px;
+  cursor: pointer;
 }
 
 .collapse-toggle {
@@ -171,12 +173,19 @@ h2 {
   border: 0;
   background: transparent;
   color: var(--blue);
-  cursor: pointer;
   font-size: 18px;
   font-weight: 900;
   line-height: 1;
+  pointer-events: none;
+  transition: transform 160ms ease;
+  user-select: none;
   vertical-align: middle;
   transform: translateY(-1px);
+}
+
+.collapsible-head:focus-visible {
+  outline: 3px solid rgba(47, 109, 246, 0.22);
+  outline-offset: 6px;
 }
 
 .collapsible-section.is-collapsed .collapsible-content {

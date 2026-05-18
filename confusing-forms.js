@@ -284,23 +284,37 @@ function saveCollapsedSections() {
 function setupCollapsibleSections() {
   document.querySelectorAll("[data-collapse-id]").forEach((section) => {
     const sectionId = section.dataset.collapseId;
-    const button = section.querySelector(".collapse-toggle");
+    const head = section.querySelector(".collapsible-head");
+    const toggle = section.querySelector(".collapse-toggle");
 
-    if (!button) {
+    if (!head || !toggle) {
       return;
     }
 
     const applyState = () => {
       const isCollapsed = Boolean(collapsedSections[sectionId]);
       section.classList.toggle("is-collapsed", isCollapsed);
-      button.setAttribute("aria-expanded", String(!isCollapsed));
-      button.setAttribute("aria-label", isCollapsed ? "Развернуть блок" : "Свернуть блок");
+      head.setAttribute("aria-expanded", String(!isCollapsed));
+      head.setAttribute("aria-label", isCollapsed ? "Развернуть блок" : "Свернуть блок");
     };
 
-    button.addEventListener("click", () => {
+    const toggleSection = () => {
       collapsedSections[sectionId] = !collapsedSections[sectionId];
       saveCollapsedSections();
       applyState();
+    };
+
+    head.setAttribute("role", "button");
+    head.setAttribute("tabindex", "0");
+
+    head.addEventListener("click", toggleSection);
+    head.addEventListener("keydown", (event) => {
+      if (event.key !== "Enter" && event.key !== " ") {
+        return;
+      }
+
+      event.preventDefault();
+      toggleSection();
     });
 
     applyState();
