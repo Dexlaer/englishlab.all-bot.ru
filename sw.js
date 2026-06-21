@@ -1,4 +1,4 @@
-const CACHE_NAME = "englishlab-cache-v5";
+const CACHE_NAME = "englishlab-cache-v6";
 
 const CORE_ASSETS = [
   "./",
